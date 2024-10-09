@@ -4,6 +4,19 @@
 
 <h1>Cats</h1>
 
+ <%= search_form_for @search do |f| %>
+  <%# カラム名_contとすることで、カラムに対してLIKEを使った曖昧一致検索ができる %>
+  <%= f.label :name_cont, '名前' %>
+  <%= f.search_field :name_cont %>
+
+  <%# カラム名_eqとすることで、カラムに対して完全一致検索ができる %>
+  <%= f.label :age_eq, '年齢' %>
+  <%= f.search_field :age_eq %>
+  <%= f.submit %>
+
+  <%= link_to 'Clear', cats_path %>
+<% end %>
+
 <div id="cats">
   <% @cats.each do |cat| %>
     <%= render cat %>
