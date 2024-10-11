@@ -33,7 +33,7 @@ class CatsController < ApplicationController
     @cat = Cat.new(cat_params)
 
     if @cat.save
-      redirect_to @cat, notice: "Cat was successfully created."
+      flash.now.notice = "Cat was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
