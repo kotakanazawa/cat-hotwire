@@ -15,7 +15,7 @@ module ApplicationHelper
   end
 
   def turbo_stream_flash
-    turbo_stream.update "flash" do
+    turbo_stream.update "flash" do # ここのflashはid="flash"のdiv要素を指す
       render partial: "flash"
     end
   end
