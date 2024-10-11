@@ -37,6 +37,7 @@
   </div>
 
   <div class="card-body mx-3">
+    <%# turbo_action: :advanceでTurbo Framesリクエスト実行後にURLを変更する %>
     <%= turbo_frame_tag "cats_list", data: { turbo_action: :advance } do %>
       <div class="row py-2">
         <div class="col-4 mt-auto">
